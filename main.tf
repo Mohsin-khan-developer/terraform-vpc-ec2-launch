@@ -1,6 +1,6 @@
 module "vpc" {
 
-  source = "../modules/vpc"
+  source = "../terraform-modules/vpc"
   #  region       = var.region
   project_name    = var.project_name
   vpc_cidr        = var.vpc_cidr
@@ -25,7 +25,7 @@ module "vpc" {
 
 module "ec2" {
 
-  source = "../modules/ec2"
+  source = "../terraform-modules/ec2"
 
   ami-name  = module.ec2[0].ami-name
   inst-type = var.inst-type
